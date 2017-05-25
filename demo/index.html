@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>img-carousel demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../img-carousel.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+      <!-- important for layout of carousel images -->
+      <style>
+        img-carousel {
+          width: 100%;
+          contain: content;
+        }
+
+        img-carousel::after {
+          display: block;
+          content: '';
+          padding-top: 75%; /* 4:3 = height is 75% of width */
+        }
+
+        img-carousel img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
+      </style>  
+
+    </custom-style>
+    
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic img-carousel demo</h3>
+      <demo-snippet>
+        <template>
+          <img-carousel>
+            <img data-src="http://atpsc.de/ima/atphalle.jpg">
+            <img data-src="http://atpsc.de/ima/anlage.jpg">
+            <img data-src="http://atpsc.de/ima/analytik.jpg">
+            <img data-src="http://atpsc.de/ima/beratung.jpg">          
+          </img-carousel>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
